@@ -1,4 +1,3 @@
-#test comment
 import tkinter as tk
 from tkinter import *
 from tinydb import TinyDB, Query
