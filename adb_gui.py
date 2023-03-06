@@ -9,6 +9,7 @@ r.title('Address Book')
 #creates and names main frame
 main_frame = Frame(r, width=500, height=100)
 main_frame.pack()
+print("test branch")
 
 
 database = TinyDB('adb_db.json')    #Initializes database as the address book database (filename: adb_db.json)
