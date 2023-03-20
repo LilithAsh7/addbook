@@ -9,8 +9,6 @@ r.title('Address Book')
 #creates and names main frame
 main_frame = Frame(r, width=500, height=100)
 main_frame.pack()
-print("test branch")
-
 
 database = TinyDB('adb_db.json')    #Initializes database as the address book database (filename: adb_db.json)
 
@@ -100,16 +98,19 @@ def add_contact_form():
     button.grid(row=3, column = 1)                              #Creates a button to click that adds the entry to the database
     r2.mainloop()
 
+#This function checks the prompt from the user and then erases the contact from the database.
 def remove_contact(name, phone_number, address, window):
 
     remove = Query()  # Initializes remove so we can use the query function
     remove_frame = Frame(window)
-
+    
+    #This if checks to see if the contact searched for exists. If they don't, it informs the user and asks them to try again.
     if search_db(name, phone_number, address) == []:
         remove_frame.grid(row=4, column=1)
         T = Label(remove_frame, text="No contact matched your entry. Try Again.\n", bg="white", width=50)
         T.grid(row=4, column=1)
 
+    #These if statements check if each field is empty or not and erases the contact with the corresponding attributes
     elif name != "":
         database.remove(remove.name == name)
         remove_frame.grid(row=4, column=1)
@@ -130,6 +131,7 @@ def remove_contact(name, phone_number, address, window):
 
     print_table()
 
+#This function creates the remove contact window and form
 def remove_contact_form():
     r3 = tk.Tk()  # Initialize new window
     r3.title('Remove contact form')  # Title the window
@@ -150,6 +152,7 @@ def remove_contact_form():
     r3.mainloop()
     pass
 
+#This function searches the database and returns the document with the matching attributes
 def search_db(name, phone_number, address):
     searchquery = Query()
 
@@ -164,6 +167,7 @@ def search_db(name, phone_number, address):
 
     return docinfo
 
+#This function displays the result of the search_db function
 def search_result(docinfo, search_frame):
 
     if docinfo == []:
@@ -184,6 +188,7 @@ def search_result(docinfo, search_frame):
                 T = Label(search_frame, text=f"{name}: {phone_number} - {address}\n", bg = '#d9d9d9', width = 50)
                 T.grid(row = 4 + item, column = 1)
 
+#This function creates the search window and form
 def search_form():
     r4 = tk.Tk()  # Initialize new window
     r4.title('Search form')  # Title the window
