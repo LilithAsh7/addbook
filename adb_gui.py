@@ -14,7 +14,7 @@ main_frame.pack()
 database = TinyDB('adb_db.json')
 
 
-# This function creates the drop-down menu with buttons
+# this function creates the drop-down menu with buttons
 def create_menu():
     # Initialize menu
     menu = Menu(r)
