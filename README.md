@@ -1,5 +1,4 @@
 # Address Book
-Simple address book application
 
 A simple address book application I started to practice my python skills.
 
