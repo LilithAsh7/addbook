@@ -5,7 +5,7 @@ A simple address book application I started to practice my python skills.
 How to run:
 
 To run this program you'll want to ensure you have tinydb and tkinter installed then just run adb_gui.py with python. 
-
+<br/><br/><br/>
 Details:
 
 The user interface was made using tkinter and tinydb is the simple database system to keep track of all the addresses you put in.
