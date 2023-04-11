@@ -6,7 +6,7 @@ from tinydb import TinyDB, Query
 r = tk.Tk()
 r.title('Address Book')
 
-# creates and names main frame
+# Creates and names main frame
 main_frame = Frame(r, width=500, height=100)
 main_frame.pack()
 
